@@ -21,7 +21,7 @@ class EditNicknameActivity : AppCompatActivity() {
             val resultIntent = Intent()
 
             // 메인화면으로 돌아가는데 이름은 nickName으로하고 가져갈 값은 inputNewNickname로 가져간다.
-            resultIntent.putExtra("neckName", inputNewNickname)
+            resultIntent.putExtra("nickName", inputNewNickname)
             setResult(Activity.RESULT_OK, resultIntent)
             finish()
 
