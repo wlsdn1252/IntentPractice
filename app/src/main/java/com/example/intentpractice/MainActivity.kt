@@ -34,6 +34,17 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(Intent.ACTION_CALL, myUri)
             startActivity(myIntent)
         }
+        
+        // 문자보내기 액션 예제
+        smsBtn.setOnClickListener {
+            // phoneNumEdt에 입력한 전화번호를 받아서 해당 번호에 문자메세지 전송
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
+
+            val myIntent = Intent(Intent.ACTION_SENDTO, myUri)
+            myIntent.putExtra("sms_body", "미리 전송할 내용 입력")
+            startActivity(myIntent)
+        }
 
 
 
