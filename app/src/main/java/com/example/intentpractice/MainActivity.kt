@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         moveToOtherBtn.setOnClickListener {
 
             // 다른 화면으로 이동하기
-            // Intent(출발지, 도착지)
+            // Intent(출발지, 도착할 액티비티이름 :: class.java)
             val myIntent = Intent(this, OtherActivity::class.java)
             startActivity(myIntent) // 출발지, 도착지 정보가담긴 myIntent를 넣어준다.
         }
