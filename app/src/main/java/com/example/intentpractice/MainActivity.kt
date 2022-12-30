@@ -6,6 +6,10 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    // 닉네임인것을 쉽게 구별하기위한 숫자를 담은 변수
+    val REQUEST_FOR_NICKNAME = 1005
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +40,16 @@ class MainActivity : AppCompatActivity() {
             myIntent.putExtra("message", inputMessageBtn)
             startActivity(myIntent)
 
+        }
+
+        // 닉네임 변경 버튼 클릭시
+        editNicknameBtn.setOnClickListener {
+            // 다른 화면으로 이동하기
+            // Intent(출발지, 도착할 액티비티이름 :: class.java)
+            val myIntent = Intent(this, EditNicknameActivity::class.java)
+
+            // 다른화면으로 넘어갈때 닉네임을 가지러갈꺼다 하는 구문 
+           startActivityForResult(myIntent, REQUEST_FOR_NICKNAME)
         }
     }
 }
