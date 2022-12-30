@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Dial 액션 예제
+        // Dial 액션 예제(전화걸기 직전)
         dialBtn.setOnClickListener {
             // phoneNumEdt에 입력한 전화번호를 받아서 해당 번호에 전화 연결
             val inputPhoneNum = phoneNumEdt.text.toString()
@@ -23,7 +23,16 @@ class MainActivity : AppCompatActivity() {
 
             val myIntent = Intent(Intent.ACTION_DIAL, myUri)
             startActivity(myIntent)
+        }
 
+        // Dial 액션 예제 (전화연결 까지)
+        callBtn.setOnClickListener {
+            // phoneNumEdt에 입력한 전화번호를 받아서 해당 번호에 전화 연결
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
         }
 
 

@@ -74,5 +74,12 @@
         android:layout_height="wrap_content"
         android:text="전화연결하기(DIAL)"/>
 
+    <Button
+        android:id="@+id/callBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화연결하기(CALL)"/>
+
+
 
 </LinearLayout>
