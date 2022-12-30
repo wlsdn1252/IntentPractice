@@ -46,6 +46,22 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
 
+        // 웹페이지로 이동
+        naverWebBtn.setOnClickListener {
+            val myUri = Uri.parse("https://naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+
+        }
+
+        // 플레이스토어로 이동
+        kakaoStoreBtn.setOnClickListener {
+            val myUri = Uri.parse("market://details?id=com.kakao.talk")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
+
+        }
+
 
 
 
